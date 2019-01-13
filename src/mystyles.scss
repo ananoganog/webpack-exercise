@@ -1,5 +1,8 @@
+$main-bk-color: #e8ebef;
+$main-color: #1d2228;
 html{
     height: 100vh;
+    background-color: $main-bk-color;
 }
 .header{
     margin: 5vh;
@@ -8,4 +11,11 @@ html{
         max-width: 200px;
         max-height: 50px;
     }
+}
+#main{
+    font-size: 20px;
+    text-align: center;
+    text-decoration: underline;
+    color: $main-color;
+    font-weight: bold;
 }

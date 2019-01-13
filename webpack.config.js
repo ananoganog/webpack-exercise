@@ -5,8 +5,11 @@ var basePath = __dirname;
 
 module.exports = {
     context: path.join(basePath, 'src'),
+    resolve: {
+        extensions: ['.js', '.ts']
+    },
     entry: {
-        app: './main.js',
+        app: './main.ts',
         appStyles: [
             './mystyles.scss',
         ],
@@ -38,6 +41,15 @@ module.exports = {
                 test: /\.js$/,
                 exclude: /node_modules/,
                 loader: 'babel-loader',
+            },
+            {
+                test: /\.(ts)$/,
+                exclude: /node_modules/,
+                loader: 'awesome-typescript-loader',
+                options: {
+                useBabel: true,
+                "babelCore": "@babel/core", // needed for Babel 7
+                }
             },
             {
                 test: /\.css$/,
